@@ -44,6 +44,7 @@ class _LoginViewState extends State<LoginView> {
                       ? null
                       : "Password must be at least 5 characters";
                 },
+                obscureText: true,
               ),
               Container(
                 margin: EdgeInsets.only(top: 23.0),
