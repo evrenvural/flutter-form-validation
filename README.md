@@ -2,4 +2,4 @@
 
 A example login view in flutter.
 
-![Alt text](/screenshot/login.png "Optional Title")
+<img src="/screenshot/login.png" width="40%" alt="Login View">
