@@ -52,7 +52,7 @@ class _LoginViewState extends State<LoginView> {
                 validator: (value) {
                   return value.length > 5
                       ? null
-                      : "Password must be at least 5 characters";
+                      : "Password must be at least 6 characters";
                 },
                 obscureText: obscureText,
               ),
