@@ -10,6 +10,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   GlobalKey<FormState> formState = GlobalKey();
   bool isAutoValidate = false;
+  bool obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +37,24 @@ class _LoginViewState extends State<LoginView> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  icon: Icon(Icons.vpn_key),
-                  labelText: "Password",
-                ),
+                    icon: Icon(Icons.vpn_key),
+                    labelText: "Password",
+                    suffixIcon: IconButton(
+                      icon: Icon(obscureText
+                          ? Icons.visibility_off
+                          : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          obscureText = !obscureText;
+                        });
+                      },
+                    )),
                 validator: (value) {
                   return value.length > 5
                       ? null
                       : "Password must be at least 5 characters";
                 },
-                obscureText: true,
+                obscureText: obscureText,
               ),
               Container(
                 margin: EdgeInsets.only(top: 23.0),
